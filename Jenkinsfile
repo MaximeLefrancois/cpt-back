@@ -1,7 +1,7 @@
 
 properties([
    parameters([
-      string(name: 'ENV', defaultValue: 'develop', description: 'Quel environnement de deploiement?')
+      string(name: 'ENV', defaultValue: 'horsprod', description: 'Quel environnement de deploiement ("prod" ou "horsprod")?')
    ])
 ])
 
@@ -15,7 +15,7 @@ node {
 		sh "echo APPLICATION-BACK"
 	}
 	
-	if (params.ENV == 'master') {
+	if (params.ENV == 'prod') {
 		stage("Deploiement de l'application Back en prod") {
 			sh "echo APPLICATION-BACK"
 		}
