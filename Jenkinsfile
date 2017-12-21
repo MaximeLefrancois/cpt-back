@@ -1,8 +1,11 @@
+
+properties([
+   parameters([
+      string(name: 'ENV', defaultValue: 'develop', description: 'Quel environnement de deploiement?')
+   ])
+])
+
 node {
-	
-	parameters {
-        string(name: 'ENV', defaultValue: 'develop', description: 'Quel environnement de deploiement?')
-    }
 	
 	stage("Récupération des sources") {
 		checkout scm
