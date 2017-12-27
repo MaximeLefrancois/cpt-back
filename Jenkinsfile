@@ -1,9 +1,9 @@
 
 properties([
    parameters([
-      string(defaultValue: 'horsprod', description: 'Quel environnement de deploiement ("prod" ou "horsprod")?', name: 'ENV_BACK'),
-	  string(defaultValue: '', description: 'Identifiant compte AD', name: 'LOGIN'),
-	  password(defaultValue: '', description: 'Password compte AD', name: 'PWD')
+      string($class: 'StringParameterDefinition', defaultValue: 'horsprod', description: 'Quel environnement de deploiement ("prod" ou "horsprod")?', name: 'ENV_BACK'),
+	  string($class: 'StringParameterDefinition', defaultValue: '', description: 'Identifiant compte AD', name: 'LOGIN'),
+	  password($class: 'PasswordParameterDefinition', defaultValue: '', description: 'Password compte AD', name: 'PWD')
    ])
 ])
 
