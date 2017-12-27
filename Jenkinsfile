@@ -2,12 +2,13 @@
 properties([
    parameters([
       string(defaultValue: 'horsprod', description: 'Quel environnement de deploiement ("prod" ou "horsprod")?', name: 'ENV_BACK'),
-	  string(defaultValue: '', description: 'Votre identifiant ?', name: 'LOGIN'),
-	  password(defaultValue: '', description: 'Votre mot de passe ?', name: 'PWD')
+	  string(defaultValue: '', description: 'Identifiant compte AD', name: 'LOGIN'),
+	  password(defaultValue: '', description: 'Password compte AD', name: 'PWD')
    ])
 ])
 
 node {
+	sh "echo le login est :${LOGIN} et le mot de passe est ${PWD}. "
 	
 	stage("Récupération des sources") {
 		checkout scm
